@@ -15,4 +15,16 @@
 		 mysqli_close($link);
 	 }
 
+function getSingle($tbl, $col, $id){
+	include('connect.php');
+	$querySingle = "SELECT * FROM {$tbl} WHERE {$col}= {$id}";
+	$runSingle = mysqli_query($link, $querySingle);
+	if($runSingle){
+		return $runSingle;
+	}else{
+		$error = "We can't find that movie right now";
+		return $error;
+	}
+	mysqli_close($link);
+}
 ?>
