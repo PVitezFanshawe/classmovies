@@ -3,9 +3,13 @@
   // error_reporting(E_ALL);
 
   require_once('admin/phpscripts/config.php');
+  if(isset($_GET['filter'])){
+    $filter = $_GET['filter'];
+    $getMovies = filterType();
+  }else{
   $tbl = 'tbl_movies';
   $getMovies = getAll($tbl);
-  
+}
 
  ?>
 <!doctype html>

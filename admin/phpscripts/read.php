@@ -27,4 +27,9 @@ function getSingle($tbl, $col, $id){
 	}
 	mysqli_close($link);
 }
+
+function filterType($tbl){
+	include 'connect.php';
+	$queryFilter = "SELECT * FROM tbl_movies m, tbl_genre g, tbl_mov_genre mg WHERE m.movies_id = mg.movies_id AND g.genre_id = mg.genre_id AND g.genre_id = 1"
+}
 ?>
