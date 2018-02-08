@@ -14,6 +14,11 @@
         $id = $found_user['user_id'];
         $_SESSION['user_id'] = $id;
         $_SESSION['user_name'] = $found_user['user_fname'];
+
+        if(mysqli_query($link, $loginstring)){
+          $updatestring = "UPDATE tbl_user SET user_ip = '{$ip}' WHERE user_id = {$id}";
+          $updatequery = mysqli_query($link, $updatestring);
+        }
         redirect_to("admin_index.php");
       }else{
         $message = "Username and/or password is incorrect. <br> Please make sure your cap lock key is turned off.";

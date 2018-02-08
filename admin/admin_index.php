@@ -4,7 +4,7 @@
 
   require_once('phpscripts/config.php');
 
-  
+
 
  ?>
 
@@ -18,6 +18,6 @@
 </head>
 <body>
   <h1>Welcome to Zombocom</h1>
-
+  <?php echo "<h2>Hi {$_SESSION['user_name']}</h2>"; ?>
 </body>
 </html>
