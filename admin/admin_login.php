@@ -22,6 +22,8 @@
 </head>
 <body>
 	<?php if(!empty($message)){ echo $message;} ?>
+
+	
 	<form action="admin_login.php" method="post">
 		<label>Username:</label>
 		<input type="text" name="username" value="">
