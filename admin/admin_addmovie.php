@@ -56,12 +56,15 @@
 		<label>Movie Release:</label>
 		<input type="text" name="release" value="<?php if(!empty($release)){echo $release;}  ?>">
 		<br>
+		<select name="genList">
 		<?php 
+
 			while($row = mysqli_fetch_array($getQuery)){
 				echo "<option value=\"{$row['genre_id']}\">{$row['genre_name']}</option>";
 			}
 		
 		?>
+		</select>
 		<label>Genre:</label>
 		<input type="text">
 		<input type="submit" name="submit" value="Show me the money">
